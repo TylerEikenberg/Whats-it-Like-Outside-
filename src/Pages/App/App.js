@@ -1,11 +1,27 @@
 import React from 'react';
+import { NavLink, BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'></header>
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <ul>
+          <NavLink to='/'>
+            <li>Home</li>
+          </NavLink>
+        </ul>
+        <ul>
+          <NavLink to='/weather'>
+            <li>Get Weather</li>
+          </NavLink>
+        </ul>
+      </div>
+
+      <Switch>
+        <Route path='/' exact component={null} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
