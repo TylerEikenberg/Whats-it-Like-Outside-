@@ -5,5 +5,14 @@
 }
 
 .App-ul {
-  border: 2x solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5vh 0 0 0;
+  padding: 3%;
+  width: 80%;
+  border: 2px solid black;
+}
+.App-navlink {
+  list-style-type: none;
 }

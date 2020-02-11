@@ -7,12 +7,10 @@ function App() {
     <BrowserRouter>
       <div className='App-container'>
         <ul className='App-ul'>
-          <NavLink to='/'>
+          <NavLink className='App-navlink' to='/'>
             <li>Home</li>
           </NavLink>
-        </ul>
-        <ul>
-          <NavLink to='/weather'>
+          <NavLink className='App-navlink' to='/weather'>
             <li>Get Weather</li>
           </NavLink>
         </ul>
