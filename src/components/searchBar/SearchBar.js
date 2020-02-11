@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchWeatherDataAsync } from '../../redux/actions/weatherActions';
 import './SearchBar.css';
 import useDebounce from '../../hooks/useDebounce';
-import { fetchWeatherDataAsync } from '../../redux/actions/weatherActions';
 
 function SearchBar() {
   const [location, setLocation] = useState('');
-  const data = useSelector(state => state.weatherReducer);
   const dispatch = useDispatch();
-  const debouncedLocation = useDebounce(location, 800);
+  const { data, loading, error } = useSelector(state => state.weatherReducer);
+  const debouncedLocation = useDebounce(location, 500);
+
   useEffect(() => {
     dispatch(fetchWeatherDataAsync(debouncedLocation));
   }, [debouncedLocation, dispatch]);
@@ -24,6 +25,7 @@ function SearchBar() {
           onChange={e => setLocation(e.target.value)}
         />
       </form>
+      {data ? <p>{data.location}</p> : null}
     </div>
   );
 }

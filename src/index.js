@@ -3,17 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { App } from '../src/Pages';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import fetchWeatherReducer from './redux/reducers/weatherReducer';
+import rootReducer from './redux/reducers';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  fetchWeatherReducer,
-  composeEnhancer(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
