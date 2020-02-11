@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Search.css';
 import { SearchBar } from '../../components/';
 
@@ -9,12 +9,6 @@ import { SearchBar } from '../../components/';
 // add redux
 
 function Search() {
-  const [location, setLocation] = useState('');
-
-  useEffect(() => {
-    // add fetch
-  }, [location]);
-
   return (
     <div className='Search-container'>
       Search Page
