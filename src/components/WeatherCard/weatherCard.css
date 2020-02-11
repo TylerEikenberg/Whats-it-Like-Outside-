@@ -1,0 +1,27 @@
+.WeatherCard-link {
+  text-decoration: none;
+  color: black;
+}
+
+.WeatherCard-container {
+  margin-top: 2vh;
+  background-color: var(--main-accent);
+  width: 80vw;
+  box-shadow: var(--darkshadow) 4px 4px 12px, var(--lightshadow) -4px -4px 12px;
+  -moz-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  -webkit-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  padding: 1vh 2vw 1vh 2vw;
+  animation: fadein 0.3s ease-in forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

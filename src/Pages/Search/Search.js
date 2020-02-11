@@ -11,12 +11,13 @@ import { SearchBar, WeatherCard } from '../../components/';
 
 function Search() {
   const { data, loading, error } = useSelector(state => state.weatherReducer);
+  console.log(data);
 
   return (
     <div className='Search-container'>
       Search Page
       <SearchBar />
-      {data ? <p>{data.location}</p> : null}
+      {data.location ? <WeatherCard data={data} /> : null}
     </div>
   );
 }
