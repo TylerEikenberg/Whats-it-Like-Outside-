@@ -19,6 +19,7 @@ function SearchBar() {
       <form className='SearchBar-form'>
         <label>Get Weather</label>
         <input
+          className='SearchBar-input'
           type='text'
           placeholder='location'
           value={location}
