@@ -17,11 +17,10 @@ function App() {
             </NavLink>
           </ul>
         </header>
+        <Switch>
+          <Route path='/weather' exact component={Search} />
+        </Switch>
       </div>
-
-      <Switch>
-        <Route path='/weather' exact component={Search} />
-      </Switch>
     </BrowserRouter>
   );
 }

@@ -1,3 +1,8 @@
+/**
+ * TODO:
+ * need to handle errors from api
+ */
+
 import axios from 'axios';
 
 const actions = {
