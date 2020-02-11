@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import { Search } from '../';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       </div>
 
       <Switch>
-        <Route path='/' exact component={null} />
+        <Route path='/weather' exact component={Search} />
       </Switch>
     </BrowserRouter>
   );

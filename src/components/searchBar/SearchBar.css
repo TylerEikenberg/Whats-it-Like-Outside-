@@ -1,0 +1,14 @@
+.SearchBar-container {
+  display: flex;
+  width: 70vw;
+  border: 2px solid green;
+  justify-content: center;
+  align-content: center;
+}
+
+.SearchBar-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
