@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import { Search } from '../';
+import { Search, Details } from '../';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         </header>
         <Switch>
           <Route path='/weather' exact component={Search} />
+          <Route path='/weather/details/:location' exact component={Details} />
         </Switch>
       </div>
     </BrowserRouter>
