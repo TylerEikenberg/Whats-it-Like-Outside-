@@ -26,7 +26,6 @@ function SearchBar() {
           onChange={e => setLocation(e.target.value)}
         />
       </form>
-      {data ? <p>{data.location}</p> : null}
     </div>
   );
 }
