@@ -5,10 +5,13 @@ import './SearchBar.css';
 function SearchBar() {
   const [location, setLocation] = useState('');
   useEffect(() => {
-    const data = axios.get(
-      `https://weather-api-tse.herokuapp.com/weather?address=${location}`
-    );
-    console.log(data);
+    const fetchData = async location => {
+      const data = await axios.get(
+        `https://weather-api-tse.herokuapp.com/weather?address=${location}`
+      );
+      console.log('data: ', data);
+    };
+    fetchData(location);
   }, [location]);
 
   return (
