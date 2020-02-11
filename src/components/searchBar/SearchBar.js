@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import './SearchBar.css';
 import useDebounce from '../../hooks/useDebounce';
+import { fetchWeatherDataAsync } from '../../redux/actions/weatherActions';
 
 function SearchBar() {
   const [location, setLocation] = useState('');
+  const data = useSelector(state => state.weatherReducer);
+  const dispatch = useDispatch();
   const debouncedLocation = useDebounce(location, 800);
   useEffect(() => {
-    const fetchData = async location => {
-      const data = await axios.get(
-        `https://weather-api-tse.herokuapp.com/weather?address=${location}`
-      );
-      console.log('data: ', data);
-    };
-    fetchData(debouncedLocation);
-  }, [debouncedLocation]);
+    dispatch(fetchWeatherDataAsync(debouncedLocation));
+  }, [debouncedLocation, dispatch]);
 
   return (
     <div className='SearchBar-container'>

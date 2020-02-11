@@ -4,7 +4,7 @@ const initState = {
   error: null
 };
 
-const fetchWeatherReducer = (state = initState, action) => {
+const weatherReducer = (state = initState, action) => {
   switch (action.type) {
     case 'FETCH_WEATHER_BEGIN':
       return { ...state, loading: true };
@@ -17,4 +17,4 @@ const fetchWeatherReducer = (state = initState, action) => {
   }
 };
 
-export default fetchWeatherReducer;
+export default weatherReducer;
