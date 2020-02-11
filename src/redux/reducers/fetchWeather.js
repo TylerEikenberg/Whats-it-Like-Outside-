@@ -16,3 +16,5 @@ const fetchWeatherReducer = (state = initState, action) => {
       return state;
   }
 };
+
+export default fetchWeatherReducer;
