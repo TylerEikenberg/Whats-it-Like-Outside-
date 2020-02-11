@@ -5,8 +5,8 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className='App'>
-        <ul>
+      <div className='App-container'>
+        <ul className='App-ul'>
           <NavLink to='/'>
             <li>Home</li>
           </NavLink>
