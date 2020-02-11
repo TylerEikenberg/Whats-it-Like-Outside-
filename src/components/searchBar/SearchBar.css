@@ -13,13 +13,14 @@
   width: 100%;
 }
 .SearchBar-input {
-  background-color: var(--main-accent);
+  margin-top: 2vh;
+  background-color: #c0e8b4;
   color: var(--green-text);
   padding: 1.5vh 0 1.5vh 5vw;
   font-size: 18px;
-  border-radius: 12px;
+  border-radius: 4px;
   border: none;
-  -webkit-box-shadow: 3px 8px 12px -7px rgba(0, 0, 0, 0.41);
-  -moz-box-shadow: 3px 8px 12px -7px rgba(0, 0, 0, 0.41);
-  box-shadow: 3px 8px 12px -7px rgba(0, 0, 0, 0.41);
+  box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
+  -moz-box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
+  -webkit-box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
 }
