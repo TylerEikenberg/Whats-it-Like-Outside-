@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SearchBar.css';
+import useDebounce from '../../hooks/useDebounce';
 
 function SearchBar() {
   const [location, setLocation] = useState('');
+  const debouncedLocation = useDebounce(location, 800);
   useEffect(() => {
     const fetchData = async location => {
       const data = await axios.get(
@@ -11,8 +13,8 @@ function SearchBar() {
       );
       console.log('data: ', data);
     };
-    fetchData(location);
-  }, [location]);
+    fetchData(debouncedLocation);
+  }, [debouncedLocation]);
 
   return (
     <div className='SearchBar-container'>
