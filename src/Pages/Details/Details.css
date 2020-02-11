@@ -1,0 +1,30 @@
+.Details-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Details-weather-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh 3vw 1vh 3vw;
+  margin-top: 3vh;
+  background-color: coral;
+  width: 80vw;
+}
+
+.Details-temp-box {
+  display: flex;
+  justify-content: flex-start;
+}
+.Details-high-low {
+  display: flex;
+  flex-direction: column;
+}
+.Details-current-temp {
+  font-size: 2.8rem;
+  margin: 0;
+}
+.Details-small-temp {
+  margin: 6px 0 0 2vw;
+}
