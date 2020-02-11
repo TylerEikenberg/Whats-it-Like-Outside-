@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './SearchBar.css';
 
 function SearchBar() {
   const [location, setLocation] = useState('');
-  useEffect(() => {}, [location]);
+  useEffect(() => {
+    const data = axios.get(
+      `https://weather-api-tse.herokuapp.com/weather?address=${location}`
+    );
+    console.log(data);
+  }, [location]);
 
   return (
     <div className='SearchBar-container'>
