@@ -20,7 +20,9 @@
   font-size: 18px;
   border-radius: 4px;
   border: none;
-  box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
-  -moz-box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
-  -webkit-box-shadow: #9aba90 4px 4px 12px, #dfffd4 -4px -4px 12px;
+  box-shadow: var(--darkshadow) 4px 4px 12px, var(--lightshadow) -4px -4px 12px;
+  -moz-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  -webkit-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
 }
