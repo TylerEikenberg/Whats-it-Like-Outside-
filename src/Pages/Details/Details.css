@@ -45,10 +45,12 @@
   justify-content: flex-end;
   width: 80vw;
 }
+
 .Details-heart {
   width: 25vw;
   height: 60px;
   border-radius: 8px;
+  border: none;
   background-color: var(--main-bg-color);
   box-shadow: var(--darkshadow) 4px 4px 12px, var(--lightshadow) -4px -4px 12px;
   -moz-box-shadow: var(--darkshadow) 4px 4px 12px,
@@ -58,5 +60,16 @@
   transition: background-color 0.3s;
 }
 .Details-heart:hover {
-  background-color: var(--main-accent);
+  background-color: var(--lightshadow);
+}
+.Details-heart:active {
+  background-color: var(--lightshadow);
+}
+
+.Details-heart-icon {
+  fill: var(--darkshadow);
+  transition: fill 0.3s;
+}
+.Details-heart:hover > .Details-heart-icon {
+  fill: #9c528b;
 }

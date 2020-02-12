@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Icon from '@mdi/react';
+import { mdiHeart } from '@mdi/js';
 import { fetchWeatherDataAsync } from '../../redux/actions/weatherActions';
 import './Details.css';
 
@@ -39,7 +41,9 @@ function Details({ match }) {
         </section>
       </div>
       <section className='Details-lower'>
-        <div className='Details-heart'></div>
+        <button className='Details-heart'>
+          <Icon className='Details-heart-icon' path={mdiHeart} size={2} />
+        </button>
       </section>
     </div>
   );
