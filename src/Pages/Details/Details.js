@@ -31,7 +31,16 @@ function Details({ match }) {
             <h5 className='Details-small-temp'>Low: 39°f</h5>
           </div>
         </section>
+        <section className='Details-extras'>
+          <h4>Overcast. Cloudy with a chance of meatballs.</h4>
+          <h4>35% chance of rain.</h4>
+          <h4>3MPH Wind speed.</h4>
+          <h4>Humidity is a number.</h4>
+        </section>
       </div>
+      <section className='Details-lower'>
+        <div className='Details-heart'></div>
+      </section>
     </div>
   );
 }

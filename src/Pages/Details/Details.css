@@ -6,13 +6,23 @@
 }
 .Details-weather-container {
   display: flex;
+  width: 80vw;
   flex-direction: column;
   padding: 1vh 3vw 1vh 3vw;
   margin-top: 3vh;
-  background-color: coral;
-  width: 80vw;
+  border-radius: 8px;
+  background-color: var(--main-bg-color);
+  box-shadow: var(--darkshadow) 4px 4px 12px, var(--lightshadow) -4px -4px 12px;
+  -moz-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  -webkit-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
 }
 
+.Details-extras {
+  display: flex;
+  flex-direction: column;
+}
 .Details-temp-box {
   display: flex;
   justify-content: flex-start;
@@ -27,4 +37,26 @@
 }
 .Details-small-temp {
   margin: 6px 0 0 2vw;
+}
+
+.Details-lower {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: flex-end;
+  width: 80vw;
+}
+.Details-heart {
+  width: 25vw;
+  height: 60px;
+  border-radius: 8px;
+  background-color: var(--main-bg-color);
+  box-shadow: var(--darkshadow) 4px 4px 12px, var(--lightshadow) -4px -4px 12px;
+  -moz-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  -webkit-box-shadow: var(--darkshadow) 4px 4px 12px,
+    var(--lightshadow) -4px -4px 12px;
+  transition: background-color 0.3s;
+}
+.Details-heart:hover {
+  background-color: var(--main-accent);
 }
