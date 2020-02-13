@@ -21,6 +21,11 @@ import './Details.css';
           {data.data.daily.data[0].humidity}
  */
 function Details({ match }) {
+  const [isFavorite, setFavorite] = useState(false);
+
+  const heartClickHandler = () => {
+    setFavorite(!isFavorite);
+  };
   const { data, loading, error } = useSelector(state => state.weatherReducer);
   return (
     <div className='Details-page-wrapper'>
@@ -41,8 +46,17 @@ function Details({ match }) {
         </section>
       </div>
       <section className='Details-lower'>
-        <button className='Details-heart'>
-          <Icon className='Details-heart-icon' path={mdiHeart} size={2} />
+        <button
+          className={`Details-heart ${isFavorite ? 'Details-heart-on' : null}`}
+          onClick={heartClickHandler}
+        >
+          <Icon
+            className={
+              isFavorite ? 'Details-heart-icon-on' : 'Details-heart-icon'
+            }
+            path={mdiHeart}
+            size={2}
+          />
         </button>
       </section>
     </div>

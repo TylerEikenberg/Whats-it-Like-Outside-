@@ -62,9 +62,6 @@
 .Details-heart:hover {
   background-color: var(--lightshadow);
 }
-.Details-heart:active {
-  background-color: var(--lightshadow);
-}
 
 .Details-heart-icon {
   fill: var(--darkshadow);
@@ -72,4 +69,11 @@
 }
 .Details-heart:hover > .Details-heart-icon {
   fill: #9c528b;
+}
+
+.Details-heart-icon-on {
+  fill: #9c528b;
+}
+.Details-heart-on {
+  background-color: var(--lightshadow);
 }
