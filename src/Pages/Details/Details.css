@@ -30,10 +30,12 @@
 .Details-high-low {
   display: flex;
   flex-direction: column;
+  color: var(--font-color);
 }
 .Details-current-temp {
   font-size: 2.8rem;
   margin: 0;
+  color: var(--font-color);
 }
 .Details-small-temp {
   margin: 6px 0 0 2vw;
@@ -44,6 +46,9 @@
   display: flex;
   justify-content: flex-end;
   width: 80vw;
+}
+.Details-extras h4 {
+  color: var(--font-color);
 }
 
 .Details-heart {
@@ -59,7 +64,6 @@
     var(--lightshadow) -4px -4px 12px;
   transition: background-color 0.3s;
 }
-
 .Details-heart-icon {
   fill: var(--darkshadow);
   transition: fill 0.3s;
