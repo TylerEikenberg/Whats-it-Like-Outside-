@@ -26,12 +26,13 @@ export const fetchWeatherFailure = error => {
 export const fetchWeatherDataAsync = location => {
   return async dispatch => {
     try {
+      dispatch(fetchWeatherData());
       const { data } = await axios.get(
         `https://weather-api-tse.herokuapp.com/weather?address=${location}`
       );
       dispatch(fetchWeatherSuccess(data));
     } catch (error) {
-      dispatch(fetchWeatherFailure(error.response));
+      dispatch(fetchWeatherFailure(error));
     }
   };
 };

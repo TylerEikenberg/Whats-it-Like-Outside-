@@ -22,14 +22,22 @@ import './Details.css';
  */
 function Details({ match }) {
   const [isFavorite, setFavorite] = useState(false);
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector(state => state.weatherReducer);
+  console.log('data: ', data);
 
   const heartClickHandler = () => {
     setFavorite(!isFavorite);
   };
-  const { data, loading, error } = useSelector(state => state.weatherReducer);
+
+  useEffect(() => {
+    dispatch(fetchWeatherDataAsync(match.params.location));
+  }, [dispatch, match.params.location]);
+
   return (
     <div className='Details-page-wrapper'>
-      Details Page for location
+      {loading ? null : 'fuck'}
+
       <div className='Details-weather-container'>
         <section className='Details-temp-box'>
           <h1 className='Details-current-temp'>56.3</h1>
