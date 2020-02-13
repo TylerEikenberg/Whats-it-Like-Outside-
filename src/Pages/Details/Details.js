@@ -5,26 +5,10 @@ import { mdiHeart } from '@mdi/js';
 import { fetchWeatherDataAsync } from '../../redux/actions/weatherActions';
 import './Details.css';
 
-// TODO:
-// fetch data on load of page incase user comes to this page without searching
-
-/**
- * Details to include:
- * 1.{data.location}
-          {data.data.currently.summary}
-          {data.data.currently.precipProbability}
-          {data.data.currently.temperature}
-          {data.data.currently.windSpeed}
-          {data.data.daily.data[0].summary}
-          {data.data.daily.data[0].temperatureHigh}
-          {data.data.daily.data[0].temperatureLow}
-          {data.data.daily.data[0].humidity}
- */
 function Details({ match }) {
   const [isFavorite, setFavorite] = useState(false);
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(state => state.weatherReducer);
-  console.log('data: ', data);
 
   const heartClickHandler = () => {
     setFavorite(!isFavorite);
@@ -36,23 +20,33 @@ function Details({ match }) {
 
   return (
     <div className='Details-page-wrapper'>
-      {loading ? null : 'fuck'}
+      {loading && !error ? 'loading' : null}
+      {data.data && !error ? (
+        <div className='Details-weather-container'>
+          <section className='Details-temp-box'>
+            <h1 className='Details-current-temp'>
+              {data.data.currently.temperature}
+            </h1>
+            <div className='Details-high-low'>
+              <h5 className='Details-small-temp'>
+                High: {data.data.daily.data[0].temperatureHigh}°f
+              </h5>
+              <h5 className='Details-small-temp'>
+                Low: {data.data.daily.data[0].temperatureLow}°f
+              </h5>
+            </div>
+          </section>
+          <section className='Details-extras'>
+            <h4>
+              {data.data.currently.summary}. {data.data.daily.data[0].summary}
+            </h4>
+            <h4>{data.data.currently.precipProbability}% chance of rain.</h4>
+            <h4>{data.data.currently.windSpeed}MPH Wind speed.</h4>
+            <h4>Humidity is at {data.data.daily.data[0].humidity}%.</h4>
+          </section>
+        </div>
+      ) : null}
 
-      <div className='Details-weather-container'>
-        <section className='Details-temp-box'>
-          <h1 className='Details-current-temp'>56.3</h1>
-          <div className='Details-high-low'>
-            <h5 className='Details-small-temp'>High: 58°f</h5>
-            <h5 className='Details-small-temp'>Low: 39°f</h5>
-          </div>
-        </section>
-        <section className='Details-extras'>
-          <h4>Overcast. Cloudy with a chance of meatballs.</h4>
-          <h4>35% chance of rain.</h4>
-          <h4>3MPH Wind speed.</h4>
-          <h4>Humidity is a number.</h4>
-        </section>
-      </div>
       <section className='Details-lower'>
         <button
           className={`Details-heart ${isFavorite ? 'Details-heart-on' : null}`}

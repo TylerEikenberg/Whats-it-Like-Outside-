@@ -59,16 +59,10 @@
     var(--lightshadow) -4px -4px 12px;
   transition: background-color 0.3s;
 }
-.Details-heart:hover {
-  background-color: var(--lightshadow);
-}
 
 .Details-heart-icon {
   fill: var(--darkshadow);
   transition: fill 0.3s;
-}
-.Details-heart:hover > .Details-heart-icon {
-  fill: #9c528b;
 }
 
 .Details-heart-icon-on {
@@ -76,4 +70,13 @@
 }
 .Details-heart-on {
   background-color: var(--lightshadow);
+}
+
+@media only screen and (min-width: 1024px) {
+  .Details-heart:hover {
+    background-color: var(--lightshadow);
+  }
+  .Details-heart:hover > .Details-heart-icon {
+    fill: #9c528b;
+  }
 }
